@@ -6,7 +6,8 @@ module.exports = async(ctx, next) => {
   	server : "courseDetail",
     ctxState : ctx.state,
   	data : {
-  	  courseId: ctx.query.courseId
+  	  courseId: ctx.query.courseId,
+			tenantId: ctx.query.tenantId
   	}
   }),Request.ajax({
   	server : "actionGetTasksProgress",
@@ -14,7 +15,8 @@ module.exports = async(ctx, next) => {
   	data : {
   		token: ctx.query.token,
   		memberId: ctx.query.memberId,
-  		courseId: ctx.query.courseId
+  		courseId: ctx.query.courseId,
+			tenantId: ctx.query.tenantId
   	}
   }),Request.ajax({
   	server : "getExamDate",

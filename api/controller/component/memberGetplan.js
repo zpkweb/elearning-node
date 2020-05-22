@@ -4,11 +4,12 @@ const constant = require('../../global/constant');
 module.exports = async(ctx, next) => {
 	// ctx.state.mock = true;
 	await Request.ajax({
-	  server : 'getStudyPlanList',
+	  server : "getStudyPlanList",
 	  ctxState : ctx.state,
 	  data : {
 	    token: ctx.query.token,
-	    courseId: ctx.query.courseId
+			courseId: ctx.query.courseId,
+			tenantId: ctx.query.tenantId
 	  }
 	}).then((res) => {
 		// if(res.state == "success"){
